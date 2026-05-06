@@ -1,5 +1,5 @@
 
-# 📄 Mini-övningar – PowerShell och Git
+# Mini-övningar – PowerShell och Git
 
 ## Dagens mål
 - Repetera grunderna i Git
@@ -93,7 +93,36 @@ while ($i -gt 0) {
 
 ---
 
+### 8. Skapa mappar och loggfiler
+```powershell
+# Skapa en logs-mapp
+
+New-Item -ItemType Directory -Name "logs"
+
+# Hämta dagens datum
+
+$datum = Get-Date -Format "yyyy-MM-dd"
+
+# Skapa en loggfil med dagens datum i filnamnet
+
+New-Item -ItemType File -Path "logs/log-$datum.txt"
+```
+
+---
+
+### 9. Skriva till en loggfil
+# Skapa en textsträng
+```powershell
+$loggText = "Skriptet kördes $(Get-Date)"
+
+# Skriv text till loggfilen
+
+Add-Content -Path "logs/log-$datum.txt" -Value $loggText
+
 ## 🔧 Git-kommandon (repetition)
+```
+
+---
 
 - `git init` – Starta ett nytt Git-repo
 - `git add filnamn` – Lägg till fil till staging
